@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:todoapp/router/create_router.dart';
 
 // Example holidays
 final Map<DateTime, List> _holidays = {
@@ -31,12 +32,12 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add',
         child: Icon(Icons.add),
-        onPressed: addNewEvents(),
+        onPressed: () {
+          Navigator.of(context).push(CreateRouter());
+        },
       ),
     );
   }
-
-  addNewEvents() {}
 }
 
 class MyCalenderWidget extends StatefulWidget {
